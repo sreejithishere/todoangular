@@ -18,4 +18,17 @@ todos:Todo[]=[];
   loadAllTodoList() {
     this.todos = this.todoService.getAllTodos();
 }
+onClickEditTodoDetail(id:number) {
+  console.log(id);
+  this.router.navigate(['/todo-detail'], {queryParams: {id: id}});
+}
+
+onClickAddTodo() {
+  this.router.navigate(['/todo-detail']);
+}
+
+onClickTodoDelete(id:number) {
+  this.todoService.deleteTodoDetail(id);
+  this.loadAllTodoList(); 
+}
 }
