@@ -22,12 +22,12 @@ export class TodoDetailComponent implements OnInit {
                 this.getTodoDetailById(this.todoId);
                 this.mode = 'Edit';    
           } else {
-                // this.todoId = null;
-                console.log(this.todoId);
                 this.todoDetail['id'] = 0;
-                this.mode = 'Add';   
+                this.mode = 'Add'; 
+                this.todoDetail.done=null;  
           }
         }); 
+
   }
   
   getTodoDetailById(id:any) {
